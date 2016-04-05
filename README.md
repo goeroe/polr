@@ -1,3 +1,5 @@
+# Please do not use this branch. See `master`
+
 # [![Logo](http://i.imgur.com/aOtrJNz.png)](https://project.polr.me)
 #####v2 Devel
 
