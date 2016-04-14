@@ -49,7 +49,8 @@ class LinkController extends Controller {
             ->first();
 
         if ($link == null) {
-            return abort(404);
+            //return abort(404);
+            return redirect()->to(env('SETTING_INDEX_REDIRECT'));
         }
 
         $link_secret_key = $link->secret_key;
@@ -64,12 +65,14 @@ class LinkController extends Controller {
             if (!$secret_key) {
                 // if we do not receieve a secret key
                 // when we are expecting one, return a 403
-                return abort(403);
+                //return abort(403);
+                return redirect()->to(env('SETTING_INDEX_REDIRECT'));
             }
             else {
                 if ($link_secret_key != $secret_key) {
                     // a secret key is provided, but it is incorrect
-                    return abort(403);
+                    //return abort(403);
+                    return redirect()->to(env('SETTING_INDEX_REDIRECT'));
                 }
             }
 
